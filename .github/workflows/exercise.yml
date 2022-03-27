@@ -1,0 +1,13 @@
+name: github-actions-exercies
+on: 
+  push:
+    branches:
+      - "test-*"
+env:
+  MY_ID: ${{ secrets.MY_ID }}
+jobs:
+  echo-my-id:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - run: echo $MY_ID
