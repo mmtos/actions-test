@@ -8,9 +8,8 @@ env:
 jobs:
   echo-my-id:
     runs-on: ubuntu-20.04
-    permissions:
-      id-token: write
-      contents: read
     steps:
       - uses: actions/checkout@v2
-      - run: echo $MY_ID
+        env: 
+          MY_ID: ${{ secrets.MY_ID}}
+        run: echo $MY_ID
